@@ -1,0 +1,13 @@
+image: Ubuntu1804
+stack: node 10
+branches:
+  only:
+    - master
+cache: node_modules
+install:
+  - yarn
+build: off
+build_script:
+  - yarn run build
+test_script:
+  - yarn run lint && yarn test
