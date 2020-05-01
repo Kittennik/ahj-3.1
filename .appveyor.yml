@@ -11,3 +11,8 @@ build_script:
   - yarn run build
 test_script:
   - yarn run lint && yarn test
+deploy_script:
+  - git config --global credential.helper store
+  - git config --global user.name AppVeyor
+  - git config --global user.email ci@appveyor.com
+  - npx push-dir --dir=dist --branch=gh-pages --force --verbose
